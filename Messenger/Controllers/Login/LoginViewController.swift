@@ -9,20 +9,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    private let scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.clipsToBounds = true
         return view
     }()
 
-    private let logoImg: UIImageView = {
+    private lazy var logoImg: UIImageView = {
         let image = UIImageView()
         image.image = UIImage.init(named: "logo")
         image.contentMode = .scaleAspectFit
         return image
     }()
 
-    private let emailField: UITextField = {
+    private lazy var emailField: UITextField = {
         let field = UITextField()
         field.keyboardType = .emailAddress
         field.autocapitalizationType = .none
@@ -32,13 +32,14 @@ class LoginViewController: UIViewController {
         field.layer.borderWidth = 1
         field.layer.borderColor = UIColor.lightGray.cgColor
         field.backgroundColor = .white
-        field.placeholder = "Email Address..."
+        field.textColor = .darkGray
+        field.attributedPlaceholder = NSAttributedString(string: "Email Address...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)])
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
         return field
     }()
 
-    private let passwordField: UITextField = {
+    private lazy var passwordField: UITextField = {
         let field = UITextField()
         field.isSecureTextEntry = true
         field.autocapitalizationType = .none
@@ -48,7 +49,8 @@ class LoginViewController: UIViewController {
         field.layer.borderWidth = 1
         field.layer.borderColor = UIColor.lightGray.cgColor
         field.backgroundColor = .white
-        field.placeholder = "Password..."
+        field.textColor = .darkGray
+        field.attributedPlaceholder = NSAttributedString(string: "Password...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray.withAlphaComponent(0.7)])
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 5, height: 0))
         field.leftViewMode = .always
         return field
