@@ -7,13 +7,8 @@ target 'Messenger' do
 
   # Pods for Messenger
 
-  target 'MessengerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MessengerUITests' do
-    # Pods for testing
-  end
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
 
 end
